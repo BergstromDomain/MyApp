@@ -115,4 +115,4 @@ git push origin main
 ```
 
 ----------
-[<< Previous chapter](../section_1_get_started/1_1_set_up_development_environment.md) | [Table of contents](../how_i_developed_this_rails_application.md) | Next chapter >>
+[<< Previous chapter](./1_1_set_up_development_environment.md) | [Table of contents](../how_i_developed_this_rails_application.md) | Next chapter >>

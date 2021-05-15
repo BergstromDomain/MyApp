@@ -1,7 +1,7 @@
 # How I developed this Ruby on Rails application #
 
 
-## Getting started ##
+## Get started ##
 
 
 ### Set up environment ###
@@ -154,4 +154,4 @@ The first thing I did was to create a Cloud9 environment in AWS.
 
 
 ----------
-[<< Previous chapter](../section_1_get_started/1_0_get_started.md) | [Table of contents](../how_i_developed_this_rails_application.md) | [Next chapter >>](../section_1_get_started/1_2_created_a_new_rails_application.md)
+[<< Previous chapter](./1_0_get_started.md) | [Table of contents](../how_i_developed_this_rails_application.md) | [Next chapter >>](./1_2_created_a_new_rails_application.md)
