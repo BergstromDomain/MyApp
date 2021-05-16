@@ -220,9 +220,14 @@ git push origin static-pages
 #### Merged the changes to the main branch ####
 I merged the static pages back into the main branch.
 ```bash
-git status
-git add -A
-git push origin static-pages
+git checkout main 
+git merge static-pages
+git push origin main
+git logline
+* 695975d - (HEAD -> main, origin/static-pages, origin/main, static-pages) Static pages - Created the home, contact and about pages (14 hours ago) <Niklas Bergstrom>
+* 3da4723 - Set up Markdown documentation (21 hours ago) <Niklas Bergstrom>
+* 31d7424 - Added RSpec and Capybara (3 days ago) <Niklas Bergstrom>
+* cfad565 - Initial commit - Created MyApp (3 days ago) <Niklas Bergstrom>
 ```
 
 
