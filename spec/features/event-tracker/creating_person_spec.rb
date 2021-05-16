@@ -8,7 +8,7 @@ RSpec.feature "Event tracker - Creating a person - " do
         click_link "New person"
 
         fill_in "First name", with: "James"
-        fill_in "Last name", with: " Hetfield"
+        fill_in "Last name", with: "Hetfield"
         click_button "Create Person"
 
         expect(page).to have_content("Person was successfully created")
@@ -17,4 +17,21 @@ RSpec.feature "Event tracker - Creating a person - " do
 
     xscenario "A user creates a new person (including uploading an image)" do
    end
+
+    scenario "A user fails to create a new person" do
+        visit "/"
+        click_link "Event tracker"
+        click_link "People"
+        click_link "New person"
+
+        fill_in "First name", with: ""
+        fill_in "Last name", with: ""
+        click_button "Create Person"
+
+        expect(page).to have_content("2 errors prohibited this person from being saved:")
+        expect(page).to have_content("First name can't be blank")
+        expect(page).to have_content("Last name can't be blank")
+
+        expect(current_path).to eq(people_path) 
+    end
 end

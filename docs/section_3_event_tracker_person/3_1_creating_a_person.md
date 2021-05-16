@@ -46,7 +46,8 @@ end
 ```
 
 When I ran the new test in RSpec it gave me an error.
-```rspec spec/features/event-tracker/creating_person_spec.rb 
+```bash
+rspec spec/features/event-tracker/creating_person_spec.rb 
 F*
 
 Pending: (Failures listed here are expected and do not affect your suite's status)
@@ -169,6 +170,91 @@ git add -A
 git commit -m "Event tracker - Implemented creating person"
 ```
 
+#### Added datavalidation ####
+I updated the spec to inclue a negative scenario.
+```ruby
+    scenario "A user fails to create a new person" do
+        visit "/"
+        click_link "Event tracker"
+        click_link "People"
+        click_link "New person"
+
+        fill_in "First name", with: ""
+        fill_in "Last name", with: ""
+        click_button "Create Person"
+
+        expect(page).to have_content("2 errors prohibited this person from being saved:")
+        expect(page).to have_content("First name can't be blank")
+        expect(page).to have_content("Last name can't be blank")
+
+        expect(current_path).to eq(people_path) 
+    end
+```
+
+When I ran the updates spec in RSpec it gave me an error.
+```bash
+rspec spec/features/event-tracker/creating_person_spec.rb 
+.*F
+
+Pending: (Failures listed here are expected and do not affect your suite's status)
+
+  1) Event tracker - Creating a person -  A user creates a new person (including uploading an image)
+     # Temporarily disabled with xscenario
+     # ./spec/features/event-tracker/creating_person_spec.rb:18
+
+
+Failures:
+
+  1) Event tracker - Creating a person -  A user fails to create a new person
+     Failure/Error: expect(page).to have_content("2 errors prohibited this person from being saved:")
+       expected to find text "2 errors prohibited this person from being saved:" in "Person was successfully created.\nFirst name:\nLast name:\nMain image:\nThumb image:\nEdit | Back"
+```       
+
+### Updated the person model ###
+I updated the person model and added data validation to it.
+```bash
+gedit  app/models/person.rb
+```
+
+```ruby
+class Person < ApplicationRecord
+    validates :first_name, :last_name, presence: true
+end
+```
+
+When I re-ran the spec in RSpec worked as expected.
+```bash
+rspec spec/features/event-tracker/creating_person_spec.rb 
+.*.
+
+Pending: (Failures listed here are expected and do not affect your suite's status)
+
+  1) Event tracker - Creating a person -  A user creates a new person (including uploading an image)
+     # Temporarily disabled with xscenario
+     # ./spec/features/event-tracker/creating_person_spec.rb:18
+
+
+Finished in 0.36839 seconds (files took 1.1 seconds to load)
+3 examples, 0 failures, 1 pending
+```
+
+I confirmed that none of my tests failed before I committed the changes.
+```bash
+rspec spec/features/
+.*...
+
+Pending: (Failures listed here are expected and do not affect your suite's status)
+
+  1) Event tracker - Creating a person -  A user creates a new person (including uploading an image)
+     # Temporarily disabled with xscenario
+     # ./spec/features/event-tracker/creating_person_spec.rb:18
+
+
+Finished in 0.4192 seconds (files took 1.01 seconds to load)
+5 examples, 0 failures, 1 pending
+```
+
+
 
 ----------
-[<< Previous Chapter](../section_3_event_tracker_person/3_0_event_tracker_person_toc.md) | [Table Of Contents](../how_i_developed_this_rails_application.md) | [Next Chapter >>](../section_3_event_tracker_person/3_2_creating_people_seeds_file.md)
+[<< Previous Chapter](../section_3_event_tracker_person/3_0_event_tracker_person_toc.md) | [Table Of Contents](../how_i_developed_this_rails_application.md) | [Next Chapter >>](../section_3_event_tracker_person/3_2_listing_people.md)
