@@ -4,10 +4,10 @@
 ## Event Tracker - Person ##
 
 
-### Creating A Person ###
+### Creating a person ###
 
 
-#### Creating git branches ####
+#### Created git branches ####
 I started off by creating a new branch for the *Event-tracker* app. Within this branch I created a feature branch *create-person*. 
 ```bash
 git checkout -b event-tracker
@@ -238,6 +238,7 @@ Finished in 0.36839 seconds (files took 1.1 seconds to load)
 3 examples, 0 failures, 1 pending
 ```
 
+### Committed the changes ###
 I confirmed that none of my tests failed before I committed the changes.
 ```bash
 rspec spec/features/
@@ -252,6 +253,17 @@ Pending: (Failures listed here are expected and do not affect your suite's statu
 
 Finished in 0.4192 seconds (files took 1.01 seconds to load)
 5 examples, 0 failures, 1 pending
+```
+
+```bash
+git status
+git add -A
+git commit -m "Event tracker - Added data validation to person model"
+git checkout event-tracker
+git merge create-person 
+git push origin event-tracker
+git branch -d create-person 
+Deleted branch create-person (was 2ae6008).
 ```
 
 
