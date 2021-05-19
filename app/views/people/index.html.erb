@@ -1,19 +1,16 @@
-  
 <p id="notice"><%= notice %></p>
 
-<h1>Listing People</h1>
+<h1>Listing people</h1>
 
 <% if @people.empty? %>
     <h1 id="no-people">No people have been created</h1>
 <% else %>
     <% @people.each do |person| %>
-      <p><%= link_to "#{person.first_name} #{person.last_name}", person_path(person) %></p>
+     <p><%= link_to "#{person.first_name.titleize} #{person.last_name.titleize}", person_path(person) %></p>
     <% end %>
 <% end %>
 
 
 <br>
 
-<%= link_to 'New person', new_person_path %>
-<%= link_to "Event Tracker", event_tracker_path %>
-<%= link_to "Home", root_path %>
+<%= link_to 'New person', new_person_path %> | <%= link_to "Event tracker", event_tracker_path %> | <%= link_to "Home", root_path %>

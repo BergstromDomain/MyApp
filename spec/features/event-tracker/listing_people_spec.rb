@@ -3,9 +3,11 @@ require "rails_helper"
 RSpec.feature "Event tracker - Listing people - " do
     
     before do
-        @person1 = Person.create(first_name: "James",
-                                  last_name: "Hetfield") 
-        @person2 = Person.create(first_name: "Lars",
+        @person1 = Person.create(first_name: "kirk",
+                                  last_name: "hammet") 
+        @person2 = Person.create(first_name: "JAMES",
+                                  last_name: "HETFIELD") 
+        @person3 = Person.create(first_name: "Lars",
                                   last_name: "Ulrich") 
     end
     
@@ -14,13 +16,14 @@ RSpec.feature "Event tracker - Listing people - " do
         click_link "Event tracker"
         click_link "People"
 
-        expect(page).to have_content(@person1.first_name)
-        expect(page).to have_content(@person1.last_name)
-        expect(page).to have_link("#{@person1.first_name} #{@person1.last_name}")
+        expect(page).to have_content("Kirk Hammet")
+        expect(page).to have_link("Kirk Hammet")
 
-        expect(page).to have_content(@person2.first_name)
-        expect(page).to have_content(@person2.last_name)
-        expect(page).to have_link("#{@person2.first_name} #{@person2.last_name}")
+        expect(page).to have_content("James Hetfield")
+        expect(page).to have_link("James Hetfield")
+
+        expect(page).to have_content("Lars Ulrich")
+        expect(page).to have_link("Lars Ulrich")
    end
 
     scenario "A user tries to lists all people but there are none" do
@@ -29,13 +32,14 @@ RSpec.feature "Event tracker - Listing people - " do
         click_link "Event tracker"
         click_link "People"
 
-        expect(page).not_to have_content(@person1.first_name)
-        expect(page).not_to have_content(@person1.last_name)
-        expect(page).not_to have_link("#{@person1.first_name} #{@person1.last_name}")
+        expect(page).not_to have_content("Kirk Hammet")
+        expect(page).not_to have_link("Kirk Hammet")
 
-        expect(page).not_to have_content(@person2.first_name)
-        expect(page).not_to have_content(@person2.last_name)
-        expect(page).not_to have_link("#{@person2.first_name} #{@person2.last_name}")
+        expect(page).not_to have_content("James Hetfield")
+        expect(page).not_to have_link("James Hetfield")
+
+        expect(page).not_to have_content("Lars Ulrich")
+        expect(page).not_to have_link("Lars Ulrich")
 
         within ("h1#no-people") do
             expect(page).to have_content("No people have been created")
