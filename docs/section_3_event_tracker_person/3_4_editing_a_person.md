@@ -234,7 +234,8 @@ git commit -m "Event tracker - Implemented editing a person"
 git checkout event-tracker
 git merge editing-person 
 git push origin event-tracker
-git branch -d editing-perosn 
+git branch -d editing-person
+Deleted branch editing-person (was 6530971).
 ```
 
 ----------

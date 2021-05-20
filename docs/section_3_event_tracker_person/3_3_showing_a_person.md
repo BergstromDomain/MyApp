@@ -251,7 +251,8 @@ git commit -m "Event tracker - Implemented showing a person"
 git checkout event-tracker
 git merge showing-person 
 git push origin event-tracker
-git branch -d showing-perosn 
+git branch -d showing-person
+Deleted branch showing-person (was ca38007).
 ```
 
 ----------
