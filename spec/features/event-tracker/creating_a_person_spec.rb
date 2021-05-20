@@ -31,7 +31,6 @@ RSpec.feature "Event tracker - Creating a person - " do
         expect(page).to have_content("2 errors prohibited this person from being saved:")
         expect(page).to have_content("First name can't be blank")
         expect(page).to have_content("Last name can't be blank")
-
         expect(current_path).to eq(people_path) 
     end
 end

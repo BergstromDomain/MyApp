@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'event-tracker',  to: 'pages#event_tracker'
   
   resources :people
+  resources :events
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -7,10 +7,10 @@
 
 ### Event Tracker - Person - Table of Contents ###
 1. [Creating a person](../section_3_event_tracker_person/3_1_creating_a_person.md)
-2. [Listing people](../section_3_event_tracker_person/3_3_listing_people.md)
-3. [Showing a person](../section_3_event_tracker_person/3_4_showing_a_person.md)
-4. [Editing a person](../section_3_event_tracker_person/3_5_editing_a_person.md)
-5. [Deleting a person](../section_3_event_tracker_person/3_6_deleting_a_person.md)
+2. [Listing people](../section_3_event_tracker_person/3_2_listing_people.md)
+3. [Showing a person](../section_3_event_tracker_person/3_3_showing_a_person.md)
+4. [Editing a person](../section_3_event_tracker_person/3_4_editing_a_person.md)
+5. [Deleting a person](../section_3_event_tracker_person/3_5_deleting_a_person.md)
 
 
 ----------

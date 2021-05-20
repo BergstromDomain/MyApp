@@ -150,6 +150,7 @@ git checkout event-tracker
 git merge deleting-person 
 git push origin event-tracker
 git branch -d deleting-person
+Deleted branch deleting-person (was 846239b).
 ```
 
 ----------

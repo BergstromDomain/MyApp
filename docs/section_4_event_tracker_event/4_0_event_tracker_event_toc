@@ -1,0 +1,17 @@
+# How I developed this Ruby on Rails application #
+
+
+## Event Tracker - Event ##
+> In this section I created the second model, the event, for which I developed some basic CRUD functionality. This model will evolve over time but one thing I've learned from previous attemps is __KISS - Keep it Simple, Stupid__.
+
+
+### Event Tracker - Event - Table of Contents ###
+1. [Creating an event](../section_4_event_tracker_event/4_1_creating_a_person.md)
+2. [Listing events](../section_4_event_tracker_event/4_2_listing_people.md)
+3. [Showing an event](../section_4_event_tracker_event/4_3_showing_a_person.md)
+4. [Editing an event](../section_4_event_tracker_event/4_4_editing_a_person.md)
+5. [Deleting an event](../section_4_event_tracker_event/4_5_deleting_a_person.md)
+
+
+----------
+<< Previous Chapter | [Table Of Contents](../how_i_developed_this_rails_application.md) | [Next Chapter >>](../section_4_event_tracker_event/4_1_creating_an_event.md)

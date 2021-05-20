@@ -6,6 +6,7 @@
 
 ### Editing a person ###
 
+
 #### Created git branch ####
 I started off by creating a new feature branch *editing-person*. 
 ```bash
