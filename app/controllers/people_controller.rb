@@ -13,12 +13,10 @@ class PeopleController < ApplicationController
   # GET /people/new
   def new
     @person = Person.new
-    @button_label = "Create a person"
   end
 
   # GET /people/1/edit
   def edit
-    @button_label = "Update the person"
   end
 
   # POST /people or /people.json

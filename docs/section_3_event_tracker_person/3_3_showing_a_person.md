@@ -16,7 +16,7 @@ git checkout -b showing-person
 #### Created the spec ####
 I created the spec.
 ```bash
-gedit spec/features/event-tracker/showing_person_spec.rb
+gedit spec/features/event-tracker/showing_a_person_spec.rb
 ```
 
 ```ruby
@@ -89,7 +89,7 @@ end
 
 When I ran the new test in RSpec it gave me an error.
 ```bash
-rspec spec/features/event-tracker/showing_person_spec.rb 
+rspec spec/features/event-tracker/showing_a_person_spec.rb 
 FF.***
 
 Pending: (Failures listed here are expected and do not affect your suite's status)
@@ -145,7 +145,7 @@ gedit app/views/people/index.html.erb
 
 When I ran the new test in RSpec it gave me the next error.
 ```bash
-rspec spec/features/event-tracker/showing_person_spec.rb 
+rspec spec/features/event-tracker/showing_a_person_spec.rb 
 FFF***
 
 Pending: (Failures listed here are expected and do not affect your suite's status)
@@ -188,7 +188,7 @@ gedit app/views/people/show.html.erb
 
 When I ran the new test in RSpec it worked as expected .
 ```bash
-rspec spec/features/event-tracker/showing_person_spec.rb 
+rspec spec/features/event-tracker/showing_a_person_spec.rb 
 ...***
 
 Pending: (Failures listed here are expected and do not affect your suite's status)
