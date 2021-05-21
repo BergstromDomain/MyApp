@@ -6,7 +6,7 @@
     <h1 id="no-events">No events have been created</h1>
 <% else %>
     <% @events.each do |event| %>
-     <p><%= link_to "#{event.titel.titleize}", event_path(event) %></p>
+     <p><%= link_to "#{event.title}", event_path(event) %> <%= "#{event.year}-#{'%02i' %event.month}-#{'%02i' %event.day}" %></p>
     <% end %>
 <% end %>
 

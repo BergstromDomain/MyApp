@@ -304,9 +304,10 @@ git status
 git add -A
 git commit -m "Event tracker - Implemented creating event"
 git checkout event-tracker
-git merge create-event
+git merge creating-event
 git push origin event-tracker
-git branch -d create-event 
+git branch -d creating-event 
+Deleted branch creating-event (was 6f0a991).
 ```
 
 
