@@ -181,7 +181,8 @@ git commit -m "Event tracker - Implemented listing events"
 git checkout event-tracker
 git merge listing-events 
 git push origin event-tracker
-git branch -d listing-events 
+git branch -d listing-events
+Deleted branch listing-events (was abebf27).
 ```
 
 ----------

@@ -7,11 +7,11 @@ RSpec.feature "Event tracker - Creating an event - " do
         click_link "Event"
         click_link "New event"
 
-        fill_in "Title", with: "Niklas Bergstrom's Birthday"
-        fill_in "Details", with: "Niklas was born in Stockholm on 17 February 1974"
-        fill_in "Day", with: "17"
-        fill_in "Month", with: "2"
-        fill_in "Year", with: "1974"
+        fill_in "Title", with: "Kirk Hammet's birthday"
+        fill_in "Details", with: "Kirk Lee Hammett was born on November 18, 1962"
+        fill_in "Day", with: "18"
+        fill_in "Month", with: "11"
+        fill_in "Year", with: "1962"
         click_button "Create an event"
 
         expect(page).to have_content("Event was successfully created")

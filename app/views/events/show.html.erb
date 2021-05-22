@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+<h1><%= @event.title %> </h1>
 
 <p>
   <strong>Details:</strong>
@@ -11,29 +8,9 @@
 </p>
 
 <p>
-  <strong>Day:</strong>
-  <%= @event.day %>
+  <strong>Date:</strong>
+  <%= @event.year.to_s + "-" + format('%02i', @event.month) + "-" + format('%02i', @event.day)%>
 </p>
 
-<p>
-  <strong>Month:</strong>
-  <%= @event.month %>
-</p>
 
-<p>
-  <strong>Year:</strong>
-  <%= @event.year %>
-</p>
-
-<p>
-  <strong>Main image:</strong>
-  <%= @event.main_image %>
-</p>
-
-<p>
-  <strong>Thumb image:</strong>
-  <%= @event.thumb_image %>
-</p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Edit event', edit_event_path(@event) %> | <%= link_to "Delete event", event_path(@event), method: :delete, data: { confirm: "Are you sure you want to delete the event?" } %> | <%= link_to 'Back', events_path %> | <%= link_to "Home", root_path %>

@@ -7,7 +7,7 @@
 ### Listing persons ###
 
 
-#### Created git branche ####
+#### Created git branch ####
 I started off by creating a new feature branch *listing-people*. 
 ```bash
 git checkout -b listing-people
