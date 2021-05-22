@@ -18,6 +18,7 @@ RSpec.feature "Event Tracker - Showing A Person - " do
         click_link "Kirk Hammet"
 
         expect(page).to have_content("Kirk Hammet")
+
         expect(page).to have_link("Edit person")
         expect(page).to have_link("Back")
         expect(page).to have_link("Home")

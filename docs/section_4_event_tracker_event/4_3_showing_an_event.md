@@ -184,6 +184,7 @@ git checkout event-tracker
 git merge showing-event
 git push origin event-tracker
 git branch -d showing-event
+Deleted branch showing-event (was 151694e).
 ```
 
 
