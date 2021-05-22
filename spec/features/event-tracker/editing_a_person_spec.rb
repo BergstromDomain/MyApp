@@ -25,6 +25,10 @@ RSpec.feature "Event tracker - Editing a person - " do
         # Expected flash message
         expect(page).to have_content("Person was successfully updated")
 
+        # Expected content
+        
+        # Expected navigation
+
         # Expected path
         expect(current_path).to eq(person_path(@person1)) 
     end
@@ -44,6 +48,10 @@ RSpec.feature "Event tracker - Editing a person - " do
         expect(page).to have_content("2 errors prohibited this person from being saved:")
         expect(page).to have_content("First name can't be blank")
         expect(page).to have_content("Last name can't be blank")
+
+        # Expected content
+        
+        # Expected navigation
 
         # Expected path
         expect(current_path).to eq(person_path(@person2)) 

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "Event tracker - Showing an event - " do
+RSpec.feature "Event tracker - Deleting an event - " do
     
     before do
         @event1 = Event.create(title: "Kirk Hammet's birthday",
@@ -20,29 +20,22 @@ RSpec.feature "Event tracker - Showing an event - " do
                                 year: "1963")
     end
 
-    scenario "A user shows an event without an uploaded image" do
+    scenario "A user deletes an event" do
         visit "/"
         click_link "Event tracker"
-        click_link "Event"
-        click_link "James Hetfield's birthday"
-        
+        click_link "Events"
+        click_link "Kirk Hammet's birthday"
+        click_link "Delete event"
+
         # Expected flash message
+        expect(page).to have_content("Event was successfully deleted")
 
         # Expected content
-        expect(page).to have_content("James Hetfield's birthday")
-        expect(page).to have_content("James Alan Hetfield was born on August 3, 1963")
-        expect(page).to have_content("1963-08-03")
+        expect(page).not_to have_content("Kirk Hammet's birthday")
 
         # Expected navigation
-        expect(page).to have_link("Edit event")
-        expect(page).to have_link("Back")
-        expect(page).to have_link("Home")
 
         # Expected path
-        expect(current_path).to eq(event_path(@event2))
+        expect(current_path).to eq(events_path) 
    end
-
-    xscenario "A user shows an event with an uploaded image" do
-    end
-
 end

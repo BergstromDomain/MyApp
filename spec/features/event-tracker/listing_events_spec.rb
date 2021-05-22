@@ -25,6 +25,9 @@ RSpec.feature "Event tracker - Listing events - " do
         click_link "Event tracker"
         click_link "Events"
 
+        # Expected flash message
+
+        # Expected content
         expect(page).to have_content("Kirk Hammet's birthday")
         expect(page).to have_link("Kirk Hammet's birthday")
         expect(page).to have_content("1962-11-18")
@@ -36,6 +39,10 @@ RSpec.feature "Event tracker - Listing events - " do
         expect(page).to have_content("Lars Ulrich's birthday")
         expect(page).to have_link("Lars Ulrich's birthday")
         expect(page).to have_content("1963-12-26")
+
+        # Expected navigation
+
+        # Expected path
    end
 
     scenario "A user tries to lists all events but there are none" do
@@ -44,6 +51,9 @@ RSpec.feature "Event tracker - Listing events - " do
         click_link "Event tracker"
         click_link "Events"
 
+        # Expected flash message
+
+        # Expected content
         expect(page).not_to have_content("Kirk Hammet's birthday")
         expect(page).not_to have_link("Kirk Hammet's birthday")
         expect(page).not_to have_content("1962-11-18")
@@ -59,5 +69,9 @@ RSpec.feature "Event tracker - Listing events - " do
         within ("h1#no-events") do
             expect(page).to have_content("No events have been created")
         end
+
+        # Expected navigation
+
+        # Expected path
     end
 end

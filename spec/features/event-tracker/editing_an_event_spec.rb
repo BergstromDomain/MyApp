@@ -38,6 +38,10 @@ RSpec.feature "Event tracker - Editing an event - " do
         # Expected flash message
         expect(page).to have_content("Event was successfully updated")
 
+        # Expected content
+        
+        # Expected navigation
+
         # Expected path
         expect(current_path).to eq(event_path(@event1)) 
     end
@@ -60,6 +64,10 @@ RSpec.feature "Event tracker - Editing an event - " do
         # Expected flash message
         expect(page).to have_content("1 error prohibited this event from being saved:")
         expect(page).to have_content("Title can't be blank")
+
+        # Expected content
+        
+        # Expected navigation
 
         # Expected path
         expect(current_path).to eq(event_path(@event2)) 

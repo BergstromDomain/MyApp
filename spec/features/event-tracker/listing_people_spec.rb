@@ -16,6 +16,9 @@ RSpec.feature "Event tracker - Listing people - " do
         click_link "Event tracker"
         click_link "People"
 
+        # Expected flash message
+
+        # Expected content
         expect(page).to have_content("Kirk Hammet")
         expect(page).to have_link("Kirk Hammet")
 
@@ -24,6 +27,10 @@ RSpec.feature "Event tracker - Listing people - " do
 
         expect(page).to have_content("Lars Ulrich")
         expect(page).to have_link("Lars Ulrich")
+
+        # Expected navigation
+
+        # Expected path
    end
 
     scenario "A user tries to lists all people but there are none" do
@@ -32,6 +39,7 @@ RSpec.feature "Event tracker - Listing people - " do
         click_link "Event tracker"
         click_link "People"
 
+        # Expected flash message
         expect(page).not_to have_content("Kirk Hammet")
         expect(page).not_to have_link("Kirk Hammet")
 
@@ -44,5 +52,11 @@ RSpec.feature "Event tracker - Listing people - " do
         within ("h1#no-people") do
             expect(page).to have_content("No people have been created")
         end
+
+        # Expected content
+        
+        # Expected navigation
+        
+        # Expected path
     end
 end

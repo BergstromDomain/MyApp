@@ -18,8 +18,15 @@ RSpec.feature "Event tracker - Deleting a person - " do
         click_link "Kirk Hammet"
         click_link "Delete person"
 
+        # Expected flash message
         expect(page).to have_content("Person was successfully deleted")
+
+        # Expected navigation
+
+        # Expected content
         expect(page).not_to have_content("Kirk Hammet")
+        
+        # Expected path
         expect(current_path).to eq(people_path) 
    end
 end

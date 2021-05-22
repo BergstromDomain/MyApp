@@ -11,7 +11,14 @@ RSpec.feature "Event tracker - Creating a person - " do
         fill_in "Last name", with: "Hammet"
         click_button "Create a person"
 
+        # Expected flash message
         expect(page).to have_content("Person was successfully created")
+
+        # Expected content
+        
+        # Expected navigation
+
+        # Expected path
         expect(current_path).to eq(person_path(Person.last.id)) 
     end
 

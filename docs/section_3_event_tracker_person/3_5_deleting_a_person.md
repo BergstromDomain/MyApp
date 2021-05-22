@@ -1,7 +1,7 @@
 # How I developed this Ruby on Rails application #
 
 
-## Event Tracker - Person ##
+## Event tracker - Person ##
 
 
 ### Deleting a person ###

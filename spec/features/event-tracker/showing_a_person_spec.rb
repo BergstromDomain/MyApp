@@ -17,12 +17,17 @@ RSpec.feature "Event Tracker - Showing A Person - " do
         click_link "People"
         click_link "Kirk Hammet"
 
+        # Expected flash message
+
+        # Expected content
         expect(page).to have_content("Kirk Hammet")
 
+        # Expected navigation
         expect(page).to have_link("Edit person")
         expect(page).to have_link("Back")
         expect(page).to have_link("Home")
 
+        # Expected path
         expect(current_path).to eq(person_path(@person1))
    end
    
@@ -32,11 +37,17 @@ RSpec.feature "Event Tracker - Showing A Person - " do
         click_link "People"
         click_link "James Hetfield"
 
+        # Expected flash message
+
+        # Expected content
         expect(page).to have_content("James Hetfield")
+
+        # Expected navigation
         expect(page).to have_link("Edit person")
         expect(page).to have_link("Back")
         expect(page).to have_link("Home")
 
+        # Expected path
         expect(current_path).to eq(person_path(@person2))
    end
 
@@ -46,11 +57,17 @@ RSpec.feature "Event Tracker - Showing A Person - " do
         click_link "People"
         click_link "Lars Ulrich"
 
+        # Expected flash message
+
+        # Expected content
         expect(page).to have_content("Lars Ulrich")
+
+        # Expected navigation
         expect(page).to have_link("Edit person")
         expect(page).to have_link("Back")
         expect(page).to have_link("Home")
 
+        # Expected path
         expect(current_path).to eq(person_path(@person3))
    end
 

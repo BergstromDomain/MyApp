@@ -14,7 +14,14 @@ RSpec.feature "Event tracker - Creating an event - " do
         fill_in "Year", with: "1962"
         click_button "Create an event"
 
+        # Expected flash message
         expect(page).to have_content("Event was successfully created")
+
+        # Expected content
+        
+        # Expected navigation
+
+        # Expected path
         expect(current_path).to eq(event_path(Event.last.id)) 
     end
 
@@ -34,8 +41,15 @@ RSpec.feature "Event tracker - Creating an event - " do
         fill_in "Year", with: ""
         click_button "Create an event"
 
+        # Expected flash message
         expect(page).to have_content("1 error prohibited this event from being saved:")
         expect(page).to have_content("Title can't be blank")
+
+        # Expected content
+        
+        # Expected navigation
+
+        # Expected path
         expect(current_path).to eq(events_path) 
     end
 end
