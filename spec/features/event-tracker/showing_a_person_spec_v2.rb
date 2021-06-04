@@ -1,0 +1,133 @@
+require "rails_helper"
+
+RSpec.feature "Event tracker - Showing a person - " do
+    
+    before do
+        @person1 = Person.create(first_name: "kirk",
+                                  last_name: "hammet") 
+        @person2 = Person.create(first_name: "JAMES",
+                                  last_name: "HETFIELD") 
+        @person3 = Person.create(first_name: "Lars",
+                                  last_name: "Ulrich") 
+    end
+    
+    scenario "A user shows a person without an uploaded image - Name entered in lowercase letters" do
+        visit "/"
+        click_link "Event tracker"
+        click_link "People"
+        click_link "Kirk Hammet"
+
+        # Expected routing
+        expect(current_path).to eq(person_path(@person1))
+
+        # Expected navigation bar
+        # TODO Add a proper navigation bar
+        expect(page).to have_content("Navigation")
+        expect(page).to have_link("Home")
+        expect(page).to have_link("Event tracker")
+
+        # Expected page title
+        # TODO Add title expectaion
+        expect(page).to have_content("Kirk Hammet")
+        
+        # Expected flash message
+        # TODO Do not expect any flash messages
+
+        # Expected content
+        # TODO Add header validation
+        expect(page).to have_content("Events")
+        # expect(page).to have_content("No events have been created")
+        expect(page).to have_link("New event")
+
+        # Expected actions
+        expect(page).to have_link("Edit person")
+        expect(page).to have_link("Delete person")
+        
+        # Expected footer
+        # TODO Create proper footer
+        expect(page).to have_content("Created by Nik at 2021-05-31 13:45")
+        expect(page).to have_content("Last updated by Nik at 2021-06-01 09:00")
+   end
+   
+    scenario "A user shows a person without an uploaded image - Name entered in uppercase letters" do
+        visit "/"
+        click_link "Event tracker"
+        click_link "People"
+        click_link "James Hetfield"
+
+        # Expected routing
+        expect(current_path).to eq(person_path(@person2))
+
+        # Expected navigation bar
+        # TODO Add a proper navigation bar
+        expect(page).to have_content("Navigation")
+        expect(page).to have_link("Home")
+        expect(page).to have_link("Event tracker")
+        
+        # Expected page title
+        # TODO Add title expectaion
+        expect(page).to have_content("James Hetfield")
+        
+        # Expected page content
+        expect(page).to have_content("Events")
+        # expect(page).to have_content("No events have been created")
+        expect(page).to have_link("New event")
+        
+        # Expected actions
+        expect(page).to have_link("Edit person")
+        expect(page).to have_link("Delete person")
+
+        # Expected footer
+        # TODO Create proper footer
+        expect(page).to have_content("Created by Nik at 2021-05-31 13:45")
+        expect(page).to have_content("Last updated by Nik at 2021-06-01 09:00")
+   end
+
+    scenario "A user shows a person without an uploaded image - Name entered in capitalized letters" do
+        visit "/"
+        click_link "Event tracker"
+        click_link "People"
+        click_link "Lars Ulrich"
+
+        # Expected routing
+        expect(current_path).to eq(person_path(@person3))
+
+        # Expected navigation bar
+        # TODO Add a proper navigation bar
+        expect(page).to have_content("Navigation")
+        expect(page).to have_link("Home")
+        expect(page).to have_link("Event tracker")
+        
+        # Expected page title
+        # TODO Add title expectaion
+        expect(page).to have_content("Lars Ulrich")
+        
+        # Expected flash message
+        # TODO Do not expect any flash messages
+
+        # Expected page content
+        # TODO Add header expectaion
+        expect(page).to have_content("Events")
+        # expect(page).to have_content("No events have been created")
+        expect(page).to have_link("New event")
+
+        # Expected actions
+        expect(page).to have_link("Edit person")
+        expect(page).to have_link("Delete person")
+
+        # Expected footer
+        # TODO Create proper footer
+        expect(page).to have_content("Created by Nik at 2021-05-31 13:45")
+        expect(page).to have_content("Last updated by Nik at 2021-06-01 09:00")
+   end
+
+    xscenario "A user shows a person with an uploaded image - Name entered in lowercase letters" do
+    end
+
+    xscenario "A user shows a person witht an uploaded image - Name entered in uppercase letters" do
+    end
+    
+    xscenario "A user shows a person with an uploaded image - Name entered in capitalized letters" do
+    end
+    
+end

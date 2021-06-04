@@ -79,6 +79,7 @@ RSpec.feature "Event tracker - Creating a person - " do
         expect(page).to have_content("First name")
         expect(page).to have_content("Last name")
         expect(page).to have_content("Main image")
+        expect(page).not_to have_content("Thumb image")
 
         # Expected actions
         expect(page).to have_selector("input[type=submit][value='Create a person']")
@@ -89,7 +90,7 @@ RSpec.feature "Event tracker - Creating a person - " do
         expect(page).to have_content("Created by Nik at 2021-05-31 13:45")
         expect(page).to have_content("Last updated by Nik at 2021-06-01 09:00")
     end
-    
+
     scenario "A user cancels the creation of a new person" do
         visit "/"
         click_link "Event tracker"
@@ -126,5 +127,5 @@ RSpec.feature "Event tracker - Creating a person - " do
         # TODO Create proper footer
         expect(page).to have_content("Created by Nik at 2021-05-31 13:45")
         expect(page).to have_content("Last updated by Nik at 2021-06-01 09:00")
-    end    
+    end
 end

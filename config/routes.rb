@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   get 'contact',        to: 'pages#contact'
   get 'event-tracker',  to: 'pages#event_tracker'
   
-  resources :people
-  resources :events
-  
+  resources :people do
+    resources :events
+  end
+  resources :events, :only => [:index]
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

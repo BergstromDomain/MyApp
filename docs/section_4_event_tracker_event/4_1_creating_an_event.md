@@ -1,7 +1,7 @@
 # How I developed this Ruby on Rails application #
 
 
-## Event Tracker - Event ##
+## Event tracker - Event ##
 
 
 ### Creating an event ###

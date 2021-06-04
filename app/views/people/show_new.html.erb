@@ -1,31 +1,26 @@
 <h2>Navigation</h2>
 <%= link_to 'Home', root_path %>
-<%= link_to 'Event tracker', people_path %> 
+<%= link_to 'Event tracker', people_path %> | 
+<br>
+
+
+<h2>Flash</h2>
+<p id="notice"><%= notice %></p>
 <br>
 
 
 <h1><%= @person.first_name.titleize %> <%= @person.last_name.titleize %> </h1>
 
 
-<h3>Flash message</h3>
-<p id="notice"><%= notice %></p>
-<br>
-
-
 <h2>Events</h2>
-<% if @person.events.empty? %>
-    <h4 id="no-events"><%= @person.first_name.titleize %> does not have any events</h4>
-<% end %>
-<br>
 <%= link_to 'New event', new_person_event_path(@person) %> 
-<br>
 
+
+<br>
 
 <h2>Actions</h2>
 <%= link_to 'Edit person', edit_person_path(@person) %> | 
 <%= link_to 'Delete person', person_path(@person), method: :delete, data: { confirm: "Are you sure you want to delete the person?" } %> | 
-<%= link_to 'Back', people_path %>
-<br>
 
 
 <h3>Footer</h3>
