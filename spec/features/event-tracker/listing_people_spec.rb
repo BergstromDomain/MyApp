@@ -16,9 +16,24 @@ RSpec.feature "Event tracker - Listing people - " do
         click_link "Event tracker"
         click_link "People"
 
-        # Expected flash message
+        # Expected routing
+        expect(current_path).to eq(people_path) 
 
+        # Expected navigation bar
+        # TODO Add a proper navigation bar
+        expect(page).to have_content("Navigation")
+        expect(page).to have_link("Home")
+        expect(page).to have_link("Event tracker")
+
+        # Expected page title
+        # TODO Add title expectaion
+        expect(page).to have_content("Listing people")
+
+        # Expected flash message
+        # TODO Do not expect any flash messages
+        
         # Expected content
+        # TODO Add header validation        
         expect(page).to have_content("Kirk Hammet")
         expect(page).to have_link("Kirk Hammet")
 
@@ -28,18 +43,40 @@ RSpec.feature "Event tracker - Listing people - " do
         expect(page).to have_content("Lars Ulrich")
         expect(page).to have_link("Lars Ulrich")
 
-        # Expected navigation
+        # Expected actions
+        expect(page).to have_link("New person")
 
-        # Expected path
+        # Expected footer
+        # TODO Create proper footer
+        expect(page).to have_content("Created by Nik at 2021-05-31 13:45")
+        expect(page).to have_content("Last updated by Nik at 2021-06-01 09:00")
    end
 
     scenario "A user tries to lists all people but there are none" do
-       Person.delete_all
+        Person.delete_all
+
         visit "/"
         click_link "Event tracker"
         click_link "People"
 
+        # Expected routing
+        expect(current_path).to eq(people_path) 
+
+        # Expected navigation bar
+        # TODO Add a proper navigation bar
+        expect(page).to have_content("Navigation")
+        expect(page).to have_link("Home")
+        expect(page).to have_link("Event tracker")
+        
+        # Expected page title
+        # TODO Add title expectaion
+        expect(page).to have_content("Listing people")
+
         # Expected flash message
+        # TODO Do not expect any flash messages
+        
+        # Expected content
+        # TODO Add header validation        
         expect(page).not_to have_content("Kirk Hammet")
         expect(page).not_to have_link("Kirk Hammet")
 
@@ -52,11 +89,13 @@ RSpec.feature "Event tracker - Listing people - " do
         within ("h1#no-people") do
             expect(page).to have_content("No people have been created")
         end
+        
+        # Expected actions
+        expect(page).to have_link("New person")
 
-        # Expected content
-        
-        # Expected navigation
-        
-        # Expected path
+        # Expected footer
+        # TODO Create proper footer
+        expect(page).to have_content("Created by Nik at 2021-05-31 13:45")
+        expect(page).to have_content("Last updated by Nik at 2021-06-01 09:00")        
     end
 end

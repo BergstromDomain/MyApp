@@ -1,3 +1,5 @@
+
+
 require "rails_helper"
 
 RSpec.feature "Event tracker - Listing people - " do
@@ -28,6 +30,7 @@ RSpec.feature "Event tracker - Listing people - " do
         # Expected page title
         # TODO Add title expectaion
         expect(page).to have_content("Listing people")
+
 
         # Expected flash message
         # TODO Do not expect any flash messages
@@ -98,3 +101,17 @@ RSpec.feature "Event tracker - Listing people - " do
         expect(page).to have_content("Last updated by Nik at 2021-06-01 09:00")        
     end
 end
+
+
+rspec spec/features/event-tracker/listing_people_spec.rb 
+..
+
+Finished in 0.40292 seconds (files took 1.65 seconds to load)
+2 examples, 0 failures
+
+Developer:~/environment/MainApp (linking-event-person) $ 
+
+
+
+
+
