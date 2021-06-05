@@ -1,37 +1,58 @@
 require "rails_helper"
 
 RSpec.feature "Event tracker - Creating an event - " do
+    before do
+        @person1 = Person.create(first_name: "Kirk",
+                                  last_name: "Hammet") 
+    end    
+    
     scenario "A user creates a new event without uploading an image" do
         visit "/"
         click_link "Event tracker"
-        click_link "Event"
+        click_link "People"
+        click_link "Kirk Hammet"
         click_link "New event"
 
-        fill_in "Title", with: "Kirk Hammet's birthday"
+        fill_in "Title", with: "Birthday"
         fill_in "Details", with: "Kirk Lee Hammett was born on November 18, 1962"
         fill_in "Day", with: "18"
         fill_in "Month", with: "11"
         fill_in "Year", with: "1962"
         click_button "Create an event"
 
+        # Expected routing
+        expect(current_path).to eq(person_event_path(@person1.id, Event.last.id))         
+
+        # Expected navigation bar
+        # TODO Add a proper navigation bar
+        expect(page).to have_content("Navigation")
+        expect(page).to have_link("Home")
+        expect(page).to have_link("Event tracker")
+
+        # Expected page title
+        # TODO Add title expectaion
+        expect(page).to have_content("Kirk Hammet - Birthday")
+
         # Expected flash message
-        expect(page).to have_content("Event was successfully created")
+        expect(page).to have_content("Flash message")
+        expect(page).to have_content("Birthday was successfully created")
 
-        # Expected content
-        
-        # Expected navigation
+        # Expected page content
+        # TODO Add header expectaion
+        expect(page).to have_content("Kirk Lee Hammett was born on November 18, 1962")
+        expect(page).to have_content("1962-11-18")
 
-        # Expected path
-        expect(current_path).to eq(event_path(Event.last.id)) 
+        # Expected actions
+        expect(page).to have_link("Edit event")
+        expect(page).to have_link("Delete event")
+        expect(page).to have_link("Back")
     end
-
-    xscenario "A user creates a new event including uploading an image" do
-   end
 
     scenario "A user fails to create a new event" do
         visit "/"
         click_link "Event tracker"
-        click_link "Event"
+        click_link "People"
+        click_link "Kirk Hammet"
         click_link "New event"
 
         fill_in "Title", with: ""
@@ -41,15 +62,39 @@ RSpec.feature "Event tracker - Creating an event - " do
         fill_in "Year", with: ""
         click_button "Create an event"
 
+        # Expected routing
+        expect(current_path).to eq(person_events_path(@person1))         
+
+        # Expected navigation bar
+        # TODO Add a proper navigation bar
+        expect(page).to have_content("Navigation")
+        expect(page).to have_link("Home")
+        expect(page).to have_link("Event tracker")
+
+        # Expected page title
+        # TODO Add title expectaion
+        expect(page).to have_content("Kirk Hammet - New event")
+
         # Expected flash message
+        expect(page).to have_content("Flash message")
         expect(page).to have_content("1 error prohibited this event from being saved:")
         expect(page).to have_content("Title can't be blank")
 
-        # Expected content
+        # Expected page content
+        # TODO Add header expectaion
+        expect(page).to have_content("Title")
+        expect(page).to have_content("Details")
+        expect(page).to have_content("Day")
+        expect(page).to have_content("Month")
+        expect(page).to have_content("Year")
+        expect(page).to have_content("Main image")
+        expect(page).not_to have_content("Thumb image")
         
-        # Expected navigation
-
-        # Expected path
-        expect(current_path).to eq(events_path) 
+        # Expected actions
+        expect(page).to have_selector("input[type=submit][value='Create an event']")
+        expect(page).to have_link("Cancel")
     end
+
+    xscenario "A user creates a new event including uploading an image" do
+   end
 end
