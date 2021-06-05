@@ -136,4 +136,4 @@ git commit -m "Event tracker - Linked events to a person - Updated listing peopl
 ```
 
 ----------
-[<< Previous Chapter](../section_5_linking_events_to_person/5_0_event_tracker_linking_events_to_person_toc.md) | [Table Of Contents](../how_i_developed_this_rails_application.md) | [Next Chapter >>](../section_5_event_tracker_linking_events_to_person/5_2_listing_people.md)
+[<< Previous Chapter](../section_5_linking_events_to_person/5_1_event_tracker_creating_a_person_toc.md) | [Table Of Contents](../how_i_developed_this_rails_application.md) | [Next Chapter >>](../section_5_event_tracker_linking_events_to_person/5_3_showing_a_person.md)

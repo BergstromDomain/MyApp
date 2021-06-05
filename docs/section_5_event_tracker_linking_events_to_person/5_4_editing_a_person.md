@@ -298,37 +298,8 @@ This functionallity worked as expected and I just committed my changes.
 ```bash
 git status
 git add -A
-git commit -m "Event tracker - Linked events to a person - Updated showing a person"
+git commit -m "Event tracker - Linked events to a person - Updated editing a person"
 ```
 
 ----------
-[<< Previous Chapter](../section_5_linking_events_to_person/5_0_event_tracker_linking_events_to_person_toc.md) | [Table Of Contents](../how_i_developed_this_rails_application.md) | [Next Chapter >>](../section_5_event_tracker_linking_events_to_person/5_2_listing_people.md)
-
-
-
-1 Update spec
-
-
-rspec spec/features/event-tracker/editing_a_person_spec.rb 
-FF**
-
-Pending: (Failures listed here are expected and do not affect your suite's status)
-
-  1) Event tracker - Editing a person -  A user updates a person including uploading a new image
-     # Temporarily disabled with xscenario
-     # ./spec/features/event-tracker/editing_a_person_spec.rb:101
-
-  2) Event tracker - Editing a person -  A user updates a person and removes the uploaded image
-     # Temporarily disabled with xscenario
-     # ./spec/features/event-tracker/editing_a_person_spec.rb:104
-
-
-Failures:
-
-  1) Event tracker - Editing a person -  A user updates a person
-     Failure/Error: expect(page).to have_content("James Hetfield was successfully updated")
-       expected to find text "James Hetfield was successfully updated" in "Navigation\nHome Event tracker\nRobert Trujillo\nFlash message\nPerson was successfully updated.\nEvents\nRobert does not have any events\nNew event\nActions\nEdit person | Delete person | Back\nFooter\nCreated by Nik at 2021-05-31 13:45 Last updated by Nik at 2021-06-01 09:00"
-       
-       
-       
-       2 Update controller including create message
+[<< Previous Chapter](../section_5_linking_events_to_person/5_3_showing_a_person.md) | [Table Of Contents](../how_i_developed_this_rails_application.md) | [Next Chapter >>](../section_5_event_tracker_linking_events_to_person/5_5_deleting_a_person.md)

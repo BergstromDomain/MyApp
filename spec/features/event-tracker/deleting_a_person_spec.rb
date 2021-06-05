@@ -3,12 +3,8 @@ require "rails_helper"
 RSpec.feature "Event tracker - Deleting a person - " do
     
     before do
-        @person1 = Person.create(first_name: "kirk",
-                                  last_name: "hammet") 
-        @person2 = Person.create(first_name: "JAMES",
-                                  last_name: "HETFIELD") 
-        @person3 = Person.create(first_name: "Lars",
-                                  last_name: "Ulrich") 
+        @person1 = Person.create(first_name: "Kirk",
+                                  last_name: "Hammet") 
     end
     
     scenario "A user deletes a person" do
@@ -18,15 +14,27 @@ RSpec.feature "Event tracker - Deleting a person - " do
         click_link "Kirk Hammet"
         click_link "Delete person"
 
+        # Expected routing
+        expect(current_path).to eq(people_path) 
+
+        # Expected navigation bar
+        # TODO Add a proper navigation bar
+        expect(page).to have_content("Navigation")
+        expect(page).to have_link("Home")
+        expect(page).to have_link("Event tracker")
+
+        # Expected page title
+        # TODO Add title expectaion
+        expect(page).to have_content("Listing people")
+
         # Expected flash message
         expect(page).to have_content("Person was successfully deleted")
 
-        # Expected navigation
-
         # Expected content
+        # TODO Add header validation
         expect(page).not_to have_content("Kirk Hammet")
-        
-        # Expected path
-        expect(current_path).to eq(people_path) 
+
+        # Expected actions
+        expect(page).to have_link("New person")
    end
 end
