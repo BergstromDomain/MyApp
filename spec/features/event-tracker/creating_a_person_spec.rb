@@ -26,7 +26,7 @@ RSpec.feature "Event tracker - Creating a person - " do
 
         # Expected flash message
         expect(page).to have_content("Flash message")
-        expect(page).to have_content("Person was successfully created")
+        expect(page).to have_content("Kirk Hammet was successfully created")
 
         # Expected page content
         # TODO Add header expectaion
@@ -79,6 +79,7 @@ RSpec.feature "Event tracker - Creating a person - " do
         expect(page).to have_content("First name")
         expect(page).to have_content("Last name")
         expect(page).to have_content("Main image")
+        expect(page).not_to have_content("Thumb image")
 
         # Expected actions
         expect(page).to have_selector("input[type=submit][value='Create a person']")

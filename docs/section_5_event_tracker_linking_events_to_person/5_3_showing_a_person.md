@@ -221,7 +221,7 @@ end
 When I ran the spec it gave me the first error.
 ```bash
 rspec spec/features/event-tracker/showing_a_person_spec.rb 
-FFFFFF**
+.FF...**
 
 Pending: (Failures listed here are expected and do not affect your suite's status)
 
@@ -236,82 +236,77 @@ Pending: (Failures listed here are expected and do not affect your suite's statu
 
 Failures:
 
-  1) Event Tracker - Showing a person -  A user shows a person without any events
-     Failure/Error: person_id: @person4.id)
-     
-     NoMethodError:
-       undefined method `id' for nil:NilClass
-
+  1) Event Tracker - Showing a person -  A user shows a person with one event
+     Failure/Error: expect(page).to have_content("James Hetfield's birthday")
+       expected to find text "James Hetfield's birthday" in "Navigation\nHome Event tracker\nJames Hetfield\nFlash message\nEvents\nNew event\nActions\nEdit person | Delete person | Back\nFooter\nCreated by Nik at 2021-05-31 13:45 Last updated by Nik at 2021-06-01 09:00"
 ```
 
 
+### Updated persons show page ###
+I updated the persons show page and looped through the events for that person.
+```bash
+gedit app/views/people/show.html.erb
+```
 
+```ruby
+<h2>Navigation</h2>
+<%= link_to 'Home', root_path %>
+<%= link_to 'Event tracker', people_path %> 
+<br>
 
 
+<h1><%= @person.first_name.titleize %> <%= @person.last_name.titleize %> </h1>
 
 
+<h3>Flash message</h3>
+<p id="notice"><%= notice %></p>
+<br>
 
 
+<h2>Events</h2>
+<% if @person.events.empty? %>
+    <h4 id="no-events"><%= @person.first_name.titleize %> does not have any events</h4>
+<% else %>
+    <% @person.events.each do |event| %>
+     <p><%= link_to "#{event.title}", person_events_path(@person, event) %> <%= event.year.to_s + "-" + format('%02i', event.month) + "-" + format('%02i', event.day)%></p>
+    <% end %>    
+<% end %>
+<br>
+<%= link_to 'New event', new_person_event_path(@person) %> 
+<br>
 
 
+<h2>Actions</h2>
+<%= link_to 'Edit person', edit_person_path(@person) %> | 
+<%= link_to 'Delete person', person_path(@person), method: :delete, data: { confirm: "Are you sure you want to delete the person?" } %> | 
+<%= link_to 'Back', people_path %>
+<br>
 
 
+<h3>Footer</h3>
+Created by Nik at 2021-05-31 13:45
+Last updated by Nik at 2021-06-01 09:00
+```
 
+When I ran the spec it worked as expected.
+```bash
+rspec spec/features/event-tracker/showing_a_person_spec.rb 
+......**
 
+Pending: (Failures listed here are expected and do not affect your suite's status)
 
+  1) Event Tracker - Showing a person -  A user shows a person without an uploaded image
+     # Temporarily disabled with xscenario
+     # ./spec/features/event-tracker/showing_a_person_spec.rb:197
 
+  2) Event Tracker - Showing a person -  A user shows a person with an uploaded image
+     # Temporarily disabled with xscenario
+     # ./spec/features/event-tracker/showing_a_person_spec.rb:200
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Finished in 0.69857 seconds (files took 0.83962 seconds to load)
+8 examples, 0 failures, 2 pending
+```
 
 
 ### Committed the changes ###
@@ -319,7 +314,7 @@ This functionallity worked as expected and I just committed my changes.
 ```bash
 git status
 git add -A
-git commit -m "Event tracker - Linked events to a person - Updated listing people"
+git commit -m "Event tracker - Linked events to a person - Updated showing a person"
 ```
 
 ----------

@@ -1,5 +1,19 @@
+# How I developed this Ruby on Rails application #
 
 
+## Event tracker - Linking events to person ##
+
+
+### Listing people ###
+
+
+### Updated spec with more expectations ###
+Just like the create person spec, I added additional expectations to the listing people spec.
+```bash
+gedit spec/features/event-tracker/listing_person_spec.rb
+```
+
+```ruby
 require "rails_helper"
 
 RSpec.feature "Event tracker - Listing people - " do
@@ -31,7 +45,6 @@ RSpec.feature "Event tracker - Listing people - " do
         # TODO Add title expectaion
         expect(page).to have_content("Listing people")
 
-
         # Expected flash message
         # TODO Do not expect any flash messages
         
@@ -56,7 +69,8 @@ RSpec.feature "Event tracker - Listing people - " do
    end
 
     scenario "A user tries to lists all people but there are none" do
-       Person.delete_all
+        Person.delete_all
+
         visit "/"
         click_link "Event tracker"
         click_link "People"
@@ -101,17 +115,25 @@ RSpec.feature "Event tracker - Listing people - " do
         expect(page).to have_content("Last updated by Nik at 2021-06-01 09:00")        
     end
 end
+```
 
-
+When I ran the spec it worked as expected.
+```bash
 rspec spec/features/event-tracker/listing_people_spec.rb 
 ..
 
-Finished in 0.40292 seconds (files took 1.65 seconds to load)
+Finished in 0.3939 seconds (files took 0.85548 seconds to load)
 2 examples, 0 failures
-
-Developer:~/environment/MainApp (linking-event-person) $ 
-
+```
 
 
+### Committed the changes ###
+This functionallity worked as expected and I just committed my changes.
+```bash
+git status
+git add -A
+git commit -m "Event tracker - Linked events to a person - Updated listing people"
+```
 
-
+----------
+[<< Previous Chapter](../section_5_linking_events_to_person/5_0_event_tracker_linking_events_to_person_toc.md) | [Table Of Contents](../how_i_developed_this_rails_application.md) | [Next Chapter >>](../section_5_event_tracker_linking_events_to_person/5_2_listing_people.md)
