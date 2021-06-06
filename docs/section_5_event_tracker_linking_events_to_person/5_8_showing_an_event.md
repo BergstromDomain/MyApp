@@ -1,3 +1,20 @@
+# How I developed this Ruby on Rails application #
+
+
+## Event tracker - Linking events to person ##
+
+
+### Showing an event ###
+
+
+### Updated spec with more expectations ###
+Just like the with the previous specs, I added additional expectations to the creating an event spec. A user can reach the show event page either from the person's events or from the vents page so I ensured that both options were included in the spec.
+```bash
+gedit spec/features/event-tracker/showing_an_event_spec.rb
+```
+
+
+```ruby
 require "rails_helper"
 
 RSpec.feature "Event tracker - Showing an event - " do
@@ -99,3 +116,89 @@ RSpec.feature "Event tracker - Showing an event - " do
     xscenario "A user shows an event with an uploaded image" do
     end
 end
+```
+
+When I ran the spec it gave me the first error.
+```bash
+rspec spec/features/event-tracker/listing_events_spec.rb 
+FF
+
+Failures:
+
+  1) Event tracker - Listing events -  A user lists all events
+     Failure/Error: <p><%= link_to "#{event.title}", event_path(event) %> <%= "#{event.year}-#{'%02i' %event.month}-#{'%02i' %event.day}" %></p>
+     
+     ActionView::Template::Error:
+       undefined method `event_path' for #<ActionView::Base:0x00000000009420>
+       Did you mean?  events_path
+```
+
+
+### Updated the events show page ###
+I updated the events show page to include the navigation links.
+```bash
+gedit app/views/events/show.html.erb
+```
+
+```ruby
+<h2>Navigation</h2>
+<%= link_to 'Home', root_path %>
+<%= link_to 'Event tracker', people_path %> 
+<br>
+
+
+<h1><%= @person.first_name.titleize %> <%= @person.last_name.titleize %> - <%= @event.title.upcase_first %> </h1>
+
+
+<h3>Flash message</h3>
+<p id="notice"><%= notice %></p>. 
+<br>
+
+
+<h3>Details</h3>
+<%= @event.details %>
+
+<h3>Date</h3>
+<%= @event.year.to_s + "-" + format('%02i', @event.month) + "-" + format('%02i', @event.day)%>
+
+
+<h2>Actions</h2>
+<%= link_to 'Edit event', edit_person_event_path(@person, @event) %> | 
+<%= link_to 'Delete event', person_event_path(@person, @event), method: :delete, data: { confirm: "Are you sure you want to delete the person?" } %> | 
+<%= link_to 'Back', person_path(@person) %>
+<br>
+
+
+<h3>Footer</h3>
+Created by Nik at 2021-05-31 13:45
+Last updated by Nik at 2021-06-01 09:00
+```
+
+
+When I ran the spec it worked as expected.
+```bash
+rspec spec/features/event-tracker/showing_an_event_spec.rb 
+..*
+
+Pending: (Failures listed here are expected and do not affect your suite's status)
+
+  1) Event tracker - Showing an event -  A user shows an event with an uploaded image
+     # Temporarily disabled with xscenario
+     # ./spec/features/event-tracker/showing_an_event_spec.rb:99
+
+
+Finished in 0.48174 seconds (files took 1.34 seconds to load)
+3 examples, 0 failures, 1 pending
+```
+
+
+### Committed the changes ###
+This functionallity worked as expected and I just committed my changes.
+```bash
+git status
+git add -A
+git commit -m "Event tracker - Linked events to a person - Updated showing an event"
+```
+
+----------
+[<< Previous Chapter](../section_5_linking_events_to_person/5_7_listing_events.md) | [Table Of Contents](../how_i_developed_this_rails_application.md) | [Next Chapter >>](../section_5_event_tracker_linking_events_to_person/5_9_editing_an_event.md)
