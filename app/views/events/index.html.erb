@@ -1,16 +1,27 @@
-<p id="notice"><%= notice %></p>
+<h2>Navigation</h2>
+<%= link_to 'Home', root_path %>
+<%= link_to 'Event tracker', people_path %> 
+<br>
+
 
 <h1>Listing events</h1>
+
+
+<h3>Flash message</h3>
+<p id="notice"><%= notice %></p>
+<br>
+
 
 <% if @events.empty? %>
     <h1 id="no-events">No events have been created</h1>
 <% else %>
     <% @events.each do |event| %>
-     <p><%= link_to "#{event.title}", event_path(event) %> <%= "#{event.year}-#{'%02i' %event.month}-#{'%02i' %event.day}" %></p>
+    <p><%= link_to "#{event.person.first_name.titleize} #{event.person.last_name.titleize}", person_path(event.person_id) %> - <%= link_to "#{event.title}", person_event_path(event.person_id, event.id) %> <%= "#{event.year}-#{'%02i' %event.month}-#{'%02i' %event.day}" %> </p>
     <% end %>
 <% end %>
 
 
-<br>
+<h3>Footer</h3>
+Created by Nik at 2021-05-31 13:45
+Last updated by Nik at 2021-06-01 09:00
 
-<%= link_to 'New event', new_event_path %> | <%= link_to "Event tracker", event_tracker_path %> | <%= link_to "Home", root_path %>
