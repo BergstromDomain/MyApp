@@ -24,9 +24,9 @@ RSpec.feature "Event tracker - Creating an event - " do
         expect(current_path).to eq(person_event_path(@person1.id, Event.last.id))         
 
         # Expected navigation bar
-        # TODO Add a proper navigation bar
-        expect(page).to have_content("Navigation")
         expect(page).to have_link("Home")
+        expect(page).to have_link("About")   
+        expect(page).to have_link("Contact")  
         expect(page).to have_link("Event tracker")
 
         # Expected page title
@@ -66,9 +66,9 @@ RSpec.feature "Event tracker - Creating an event - " do
         expect(current_path).to eq(person_events_path(@person1))         
 
         # Expected navigation bar
-        # TODO Add a proper navigation bar
-        expect(page).to have_content("Navigation")
         expect(page).to have_link("Home")
+        expect(page).to have_link("About")   
+        expect(page).to have_link("Contact")  
         expect(page).to have_link("Event tracker")
 
         # Expected page title
@@ -77,8 +77,11 @@ RSpec.feature "Event tracker - Creating an event - " do
 
         # Expected flash message
         expect(page).to have_content("Flash message")
-        expect(page).to have_content("1 error prohibited this event from being saved:")
+        expect(page).to have_content("4 errors prohibited this event from being saved:")
         expect(page).to have_content("Title can't be blank")
+        expect(page).to have_content("Year can't be blank")
+        expect(page).to have_content("Month can't be blank")
+        expect(page).to have_content("Day can't be blank")
 
         # Expected page content
         # TODO Add header expectaion

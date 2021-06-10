@@ -42,10 +42,10 @@ RSpec.feature "Event tracker - Showing an event - " do
         expect(current_path).to eq(person_event_path(@person2.id, @event2.id))
 
         # Expected navigation bar
-        # TODO Add a proper navigation bar
-        expect(page).to have_content("Navigation")
         expect(page).to have_link("Home")
-        expect(page).to have_link("Event tracker") 
+        expect(page).to have_link("About")   
+        expect(page).to have_link("Contact")  
+        expect(page).to have_link("Event tracker")
         
         # Expected page title
         # TODO Add title expectaion
@@ -67,17 +67,17 @@ RSpec.feature "Event tracker - Showing an event - " do
     scenario "A user selects an event from the events listing and shows it" do
         visit "/"
         click_link "Event tracker"
-        click_link "Event"
+        click_link "Events"
         click_link "Formed Metallica"
         
         # Expected routing
         expect(current_path).to eq(person_event_path(@person2, @event3))
 
         # Expected navigation bar
-        # TODO Add a proper navigation bar
-        expect(page).to have_content("Navigation")
         expect(page).to have_link("Home")
-        expect(page).to have_link("Event tracker") 
+        expect(page).to have_link("About")   
+        expect(page).to have_link("Contact")  
+        expect(page).to have_link("Event tracker")
         
         # Expected page title
         # TODO Add title expectaion

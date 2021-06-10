@@ -113,14 +113,39 @@ Failed examples:
 rspec ./spec/features/event-tracker/deleting_an_event_spec.rb:34 # Event tracker - Deleting an event -  A user deletes an event
 ```
 
+### Updated the events controller ###
+To resolve this I updated the destroy action in the events controller.
+```bash
+gedit app/controllers/events_controller.rb
+```
+
+```ruby
+  def destroy
+    @event.destroy
+    respond_to do |format|
+      format.html { redirect_to person_path(@person), notice: "Event was successfully deleted." }
+      format.json { head :no_content }
+    end
+  end
+```
+
+When I ran the spec it worked as expected.
+```bash
+rspec spec/features/event-tracker/deleting_an_event_spec.rb 
+.
+
+Finished in 0.47671 seconds (files took 1.08 seconds to load)
+1 example, 0 failures
+```
+
 
 ### Committed the changes ###
 This functionallity worked as expected and I just committed my changes.
 ```bash
 git status
 git add -A
-git commit -m "Event tracker - Linked events to a person - Updated deleting a person"
+git commit -m "Event tracker - Linked events to a person - Updated deleting an event"
 ```
 
 ----------
-[<< Previous Chapter](../section_5_linking_events_to_person/5_4_editing_a_person.md) | [Table Of Contents](../how_i_developed_this_rails_application.md) | [Next Chapter >>](../section_5_event_tracker_linking_events_to_person/5_6_creating_an_event.md)
+[<< Previous Chapter](../section_5_linking_events_to_person/5_9_editing_an_event.md) | [Table Of Contents](../how_i_developed_this_rails_application.md) | [Next Chapter >>](../section_5_event_tracker_linking_events_to_person/5_11_refactoring.md)

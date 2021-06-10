@@ -8,7 +8,7 @@
 
 
 ### Updated spec with more expectations ###
-Just like the with the previous specs, I added additional expectations to the deleting person spec.
+Just like the with the previous specs, I added additional expectations to the deleting a person spec.
 ```bash
 gedit spec/features/event-tracker/deleting_a_person_spec.rb
 ```
