@@ -8,7 +8,7 @@
 
 
 ### Updated spec with more expectations ###
-Just like the with the previous specs, I added additional expectations to the creating an event spec. A user can reach the show event page either from the person's events or from the vents page so I ensured that both options were included in the spec.
+Just like the with the previous specs, I added additional expectations to the showing an event spec. A user can reach the show event page either from the person's events or from the vents page so I ensured that both options were included in the spec.
 ```bash
 gedit spec/features/event-tracker/showing_an_event_spec.rb
 ```
@@ -75,9 +75,9 @@ RSpec.feature "Event tracker - Showing an event - " do
         expect(page).to have_content("Lars Ulrich was born on December 26, 1963")
         expect(page).to have_content("1963-12-26")
 
-        # Expected navigation
+        # Expected actions
         expect(page).to have_link("Edit event")
-        expect(page).to have_link("Edit event")
+        expect(page).to have_link("Delete event")
         expect(page).to have_link("Back")
    end
 
@@ -107,9 +107,9 @@ RSpec.feature "Event tracker - Showing an event - " do
         expect(page).to have_content("Lars and James formed Metallica")
         expect(page).to have_content("1981-10-01")
 
-        # Expected navigation
+        # Expected actions
         expect(page).to have_link("Edit event")
-        expect(page).to have_link("Edit event")
+        expect(page).to have_link("Delete event")
         expect(page).to have_link("Back")
    end
 

@@ -21,7 +21,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to person_event_path(@person, @event), notice: "#{@event.title.capitalize} was successfully created." }
+        format.html { redirect_to person_event_path(@person, @event), notice: "#{@event.title.upcase_first} was successfully created." }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -33,7 +33,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, notice: "The event was successfully updated to #{@event.title.titleize}." }
+        format.html { redirect_to person_event_path(@person, @event), notice: "The event was successfully updated to #{@event.title.upcase_first}." }
         format.json { render :show, status: :ok, location: @event }
       else
         format.html { render :edit, status: :unprocessable_entity }

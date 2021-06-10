@@ -58,9 +58,9 @@ RSpec.feature "Event tracker - Showing an event - " do
         expect(page).to have_content("Lars Ulrich was born on December 26, 1963")
         expect(page).to have_content("1963-12-26")
 
-        # Expected navigation
+        # Expected actions
         expect(page).to have_link("Edit event")
-        expect(page).to have_link("Edit event")
+        expect(page).to have_link("Delete event")
         expect(page).to have_link("Back")
    end
 
@@ -90,9 +90,9 @@ RSpec.feature "Event tracker - Showing an event - " do
         expect(page).to have_content("Lars and James formed Metallica")
         expect(page).to have_content("1981-10-01")
 
-        # Expected navigation
+        # Expected actions
         expect(page).to have_link("Edit event")
-        expect(page).to have_link("Edit event")
+        expect(page).to have_link("Delete event")
         expect(page).to have_link("Back")
    end
 
