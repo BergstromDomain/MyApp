@@ -37,8 +37,8 @@ puts "12 new birthday events created"
 
 6.times do |event|
     Event.create!(
-        title: "Wedding",
-        details: "Name #{event+1} was born on #{event+1}-#{event+1}-#{event+2001}",
+        title: "Graduation",
+        details: "Name #{event+1} graduated on #{event+1}-#{event+1}-#{event+2001}",
         main_image: "http://placeimg.com/600/400/nature",
         thumb_image: "http://placeimg.com/350/200/nature",
         day: "#{2*event+1}",
@@ -47,4 +47,4 @@ puts "12 new birthday events created"
         person_id: "#{last_person_id-1}"
         )
 end
-puts "6 new wedding events created"
+puts "6 new graduation events created"
