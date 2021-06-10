@@ -1,3 +1,19 @@
+# How I developed this Ruby on Rails application #
+
+
+## Event tracker - Linking events to person ##
+
+
+### Deleting an event ###
+
+
+### Updated spec with more expectations ###
+Just like the with the previous specs, I added additional expectations to the deleting an event spec.
+```bash
+gedit spec/features/event-tracker/deleting_an_event_spec.rb
+```
+
+```ruby
 require "rails_helper"
 
 RSpec.feature "Event tracker - Deleting an event - " do
@@ -71,3 +87,40 @@ RSpec.feature "Event tracker - Deleting an event - " do
         expect(page).to have_content("Last updated by Nik at 2021-06-01 09:00")
    end
 end
+```
+
+When I ran the spec it gave me the first error.
+```bash
+rspec spec/features/event-tracker/deleting_an_event_spec.rb 
+F
+
+Failures:
+
+  1) Event tracker - Deleting an event -  A user deletes an event
+     Failure/Error: expect(current_path).to eq(person_path(@person2))
+     
+       expected: "/people/687"
+            got: "/events"
+     
+       (compared using ==)
+     # ./spec/features/event-tracker/deleting_an_event_spec.rb:43:in `block (2 levels) in <top (required)>'
+
+Finished in 0.43622 seconds (files took 1.03 seconds to load)
+1 example, 1 failure
+
+Failed examples:
+
+rspec ./spec/features/event-tracker/deleting_an_event_spec.rb:34 # Event tracker - Deleting an event -  A user deletes an event
+```
+
+
+### Committed the changes ###
+This functionallity worked as expected and I just committed my changes.
+```bash
+git status
+git add -A
+git commit -m "Event tracker - Linked events to a person - Updated deleting a person"
+```
+
+----------
+[<< Previous Chapter](../section_5_linking_events_to_person/5_4_editing_a_person.md) | [Table Of Contents](../how_i_developed_this_rails_application.md) | [Next Chapter >>](../section_5_event_tracker_linking_events_to_person/5_6_creating_an_event.md)
