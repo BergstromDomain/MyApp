@@ -1,6 +1,19 @@
-<h1>Editing Blog</h1>
+<h1>Editing</h1>
+<br>
 
-<%= render 'form', blog: @blog %>
 
-<%= link_to 'Show', @blog %> |
-<%= link_to 'Back', blogs_path %>
+<h3>Flash message</h3>
+<p id="notice"><%= notice %></p>
+<br>
+
+
+<%= render partial: 'form', :locals => {blog: @blog, :submit_button_label => 'Update the blog post'} %>
+
+
+<h2>Actions</h2>
+<%= link_to 'Cancel', blogs_path %>
+
+
+<h3>Footer</h3>
+Created by Nik at 2021-05-31 13:45
+Last updated by Nik at 2021-06-01 09:00

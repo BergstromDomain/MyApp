@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "Event tracker - Listing events - " do
+RSpec.feature "Blogs - Listing blog posts - " do
     
     before do
         @blog1 = Blog.create(title: "Ruby on Rails",
