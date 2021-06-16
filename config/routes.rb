@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :blogs
   root to: 'pages#home'
 
   get 'home',           to: 'pages#home'

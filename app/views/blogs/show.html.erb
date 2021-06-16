@@ -1,0 +1,31 @@
+<h1><%= @blog.title.titleize %></h1>
+
+
+<h3>Flash message</h3>
+<p id="notice"><%= notice %></p>
+<br>
+
+
+<p>
+  <strong>Title:</strong>
+  <%= @blog.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @blog.body %>
+</p>
+
+
+
+<h2>Actions</h2>
+<%= link_to 'Edit blog post', edit_blog_path(@blog) %> | 
+<%= link_to 'Publish blog post', edit_blog_path(@blog) %> | 
+<%= link_to 'Delete blog post', blog_path(@blog), method: :delete, data: { confirm: "Are you sure you want to delete the blog post?" } %> | 
+<%= link_to 'Back', blogs_path %>
+<br>
+
+
+<h3>Footer</h3>
+Created by Nik at 2021-05-31 13:45
+Last updated by Nik at 2021-06-01 09:00
