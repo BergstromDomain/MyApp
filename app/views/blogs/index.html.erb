@@ -9,10 +9,11 @@
 
 <h2>Blogs</h2>
 <% if @blogs.empty? %>
-    <h1 id="no-blogs">No blogs have been created</h1>
+    <h1 id="no-blogs">No blog posts have been created</h1>
 <% else %>
     <% @blogs.each do |blog| %>
-     <p><%= link_to "#{blog.title.titleize}", blog_path(blog) %></p>
+     <p><%= link_to "#{blog.title}", blog_path(blog) %></p>
+     <p><%= "#{blog.body}" %></p>
     <% end %>
 <% end %>
 <br>
