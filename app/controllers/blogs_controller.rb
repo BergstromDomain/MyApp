@@ -40,7 +40,7 @@ class BlogsController < ApplicationController
   def destroy
     @blog.destroy
     respond_to do |format|
-      format.html { redirect_to blogs_url, notice: "Blog post was successfully destroyed." }
+      format.html { redirect_to blogs_url, notice: "Blog post was successfully deleted." }
     end
   end
 
