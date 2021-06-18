@@ -37,7 +37,7 @@ RSpec.feature "About Page - " do
 end
 ```
 
-I ran the new test in RSpec which gave me an error.
+When I ran the spec it gave me the first error.
 ```bash
 rspec spec/features/static-pages/about_page_spec.rb
 F
@@ -69,7 +69,7 @@ Rails.application.routes.draw do
 end
 ```
 
-I re-ran the test in RSpec which gave me a new error.
+When I re-ran the spec it gave me the next error.
 ```bash
 rspec spec/features/static-pages/about_page_spec.rb
 F
@@ -85,19 +85,14 @@ Failures:
 
 
 #### Added a link to the home page ####
-To solve this, I added an links from the home page.
-```bash
-gedit app/views/pages/home.html.erb
-```
+To solve this, I added an links from the home page, `app/views/pages/home.html.erb`
 
 ```ruby
-<h1>MyApp</h1>
-
 <%= link_to "About Me", about_path %>
 <%= link_to "Contact Me", contact_path %>
 ```
 
-I re-ran the test in RSpec which gave me a new error.
+When I re-ran the spec it gave me the next error.
 ```bash
 rspec spec/features/static-pages/about_page_spec.rb
 F
@@ -111,16 +106,13 @@ Failures:
 
 
 #### Added title to the about page ####
-To solve this, I updated the about page and added a title.
-```bash
-gedit app/views/pages/about.html.erb
-```
+To solve this, I updated the about page, `app/views/pages/about.html.erb` and added a title.
 
 ```ruby
 <h1>About Me</h1>
 ```
 
-I re-ran the test in RSpec which gave me a new error.
+When I re-ran the spec it gave me the next error.
 ```bash
 rspec spec/features/static-pages/about_page_spec.rb
 F
@@ -136,12 +128,10 @@ Failures:
 #### Added link to the home page from the about page ####
 To solve this, I added a home link from the about page.
 ```ruby
-<h1>About Me</h1>
-
 <%= link_to "Home", root_path %>
 ```
 
-I re-ran the test in RSpec which now passed.
+When I re-ran the spec it now worked as expected.
 ```bash
 rspec spec/features/static-pages/about_page_spec.rb
 .
@@ -152,10 +142,7 @@ Finished in 0.12668 seconds (files took 0.8928 seconds to load)
 
 
 #### Develop the test for the contact page ####
-I followed the same steps as before and I created the feature test.
-```bash
-gedit spec/features/contact_page_spec.rb
-```
+I followed the same steps as before and I created the feature test, `spec/features/contact_page_spec.rb`.
 
 ```ruby
 require "rails_helper"
@@ -174,24 +161,10 @@ end
 
 #### Updated the contact page ####
 I updated the contact page and added a title and link back to the home page.
-```ruby
-<h1>Contact Me</h1>
-```
 
 
 #### Added link to the home page from the contact page ####
-I added a home link from the contact  page.
-```ruby
-<h1>Contact Me</h1>
-<%= link_to "Home", root_path %>
-```
-
-
-#### Tested the static pages ####
-I ran both static tests to ensure that everything was working as expected.
-```bash
-rspec spec/features/static-pages/
-```
+I added a home link from the contact page.
 
 
 #### Committed the changes ####
@@ -200,14 +173,10 @@ Before I committed any changes I made sure that all existing tests passed.
 rspec spec/features/static-pages/
 ..
 
-Finished in 0.07948 seconds (files took 1.21 seconds to load)
+Finished in 0.22302 seconds (files took 1.07 seconds to load)
 2 examples, 0 failures
-..
-
 ```
 
-
-#### Committed the changes ####
 I checked the git status before I committed my changes.
 ```bash
 git status
@@ -218,16 +187,11 @@ git push origin static-pages
 
 
 #### Merged the changes to the main branch ####
-I merged the static pages back into the main branch.
+Finally I merged the static pages back into the main branch.
 ```bash
 git checkout main 
 git merge static-pages
 git push origin main
-git logline
-* 695975d - (HEAD -> main, origin/static-pages, origin/main, static-pages) Static pages - Created the home, contact and about pages (14 hours ago) <Niklas Bergstrom>
-* 3da4723 - Set up Markdown documentation (21 hours ago) <Niklas Bergstrom>
-* 31d7424 - Added RSpec and Capybara (3 days ago) <Niklas Bergstrom>
-* cfad565 - Initial commit - Created MyApp (3 days ago) <Niklas Bergstrom>
 ```
 
 

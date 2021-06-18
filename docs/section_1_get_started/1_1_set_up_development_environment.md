@@ -154,4 +154,4 @@ The first thing I did was to create a Cloud9 environment in AWS.
 
 
 ----------
-[<< Previous chapter](./1_0_get_started.md) | [Table of contents](../how_i_developed_this_rails_application.md) | [Next chapter >>](./1_2_created_a_new_rails_application.md)
+[<< Previous chapter](./1_0_get_started_toc.md) | [Table of contents](../how_i_developed_this_rails_application.md) | [Next chapter >>](./1_2_created_a_new_rails_application.md)

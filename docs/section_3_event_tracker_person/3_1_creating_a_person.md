@@ -45,7 +45,7 @@ RSpec.feature "Event tracker - Creating a person - " do
 end
 ```
 
-When I ran the new test in RSpec it gave me an error.
+When I ran the spec it gave me the first error.
 ```bash
 rspec spec/features/event-tracker/creating_person_spec.rb 
 F*
@@ -73,9 +73,8 @@ The next thing I did was to generate the *Person* model using scaffolding.
 rails g scaffold Person first_name:string last_name:string main_image:text thumb_image:text
 ```
 
-I reviewed the migration file before running the migration to ensure everything was as expected.
+I reviewed the migration file, `db/migrate/20210407114922_create_people.rb` before running the migration to ensure everything was as expected.
 ```bash
-gedit db/migrate/20210407114922_create_people.rb
 rails db:migrate
 == 20210515220840 CreatePeople: migrating =====================================
 -- create_table(:people)
@@ -85,10 +84,7 @@ rails db:migrate
 
 
 #### Created an event tracker landing page ####
-I want the event tracker to have it's own landing page from which I can create persons and events. To fix this I started by updating the routes file.
-```bash
-gedit config/routes.rb
-```
+I want the event tracker to have it's own landing page from which I can create persons and events. To fix this I started by updating the routes file, `gedit config/routes.rb`.
 
 ```ruby
 Rails.application.routes.draw do
@@ -103,11 +99,7 @@ Rails.application.routes.draw do
 end
 ```
 
-The next step was to update the pages controller and define a method.
-```bash
-gedit app/controllers/pages_controller.rb
-```
-
+The next step was to update the pages controller, `gedit app/controllers/pages_controller.rb`, and define a method.
 ```ruby
 def event_tracker
 end
@@ -115,11 +107,7 @@ end
 
 I updated the home page and added a link to the event tracker page.
 ```ruby
-<h1>MyApp</h1>
-
 <%= link_to "Event tracker", event_tracker_path %>
-<%= link_to "About Me", about_path %>
-<%= link_to "Contact Me", contact_path %>
 ```
 
 Finally I created the event tracker page and added the required links to it.
@@ -131,7 +119,7 @@ Finally I created the event tracker page and added the required links to it.
 ```
 
 
-When I re-ran the test in RSpec it passed.
+When I re-ran the spec it worked as expected.
 ```bash
 rspec spec/features/event-tracker/creating_person_spec.rb 
 .*
@@ -147,8 +135,9 @@ Finished in 0.16027 seconds (files took 1.06 seconds to load)
 2 examples, 0 failures, 1 pending
 ```
 
+
 #### Committing the changes ####
-I confirmed that none of my tests failed before I committed the changes.
+Before I committed any changes I made sure that all existing tests passed.
 ```bash
 rspec spec/features/
 .*..
@@ -167,8 +156,9 @@ Finished in 0.44885 seconds (files took 2.88 seconds to load)
 ```bash
 git status
 git add -A 
-git commit -m "Event tracker - Implemented creating person"
+git commit -m "Event tracker - Implemented creating a person"
 ```
+
 
 #### Added datavalidation ####
 I updated the spec to inclue a negative scenario.
@@ -191,7 +181,7 @@ I updated the spec to inclue a negative scenario.
     end
 ```
 
-When I ran the updates spec in RSpec it gave me an error.
+When I re-ran the spec it gave me the next error.
 ```bash
 rspec spec/features/event-tracker/creating_person_spec.rb 
 .*F
@@ -210,19 +200,16 @@ Failures:
        expected to find text "2 errors prohibited this person from being saved:" in "Person was successfully created.\nFirst name:\nLast name:\nMain image:\nThumb image:\nEdit | Back"
 ```       
 
-### Updated the person model ###
-I updated the person model and added data validation to it.
-```bash
-gedit  app/models/person.rb
-```
 
+### Updated the person model ###
+I updated the person model, `app/models/person.rb` and added data validation to it.
 ```ruby
 class Person < ApplicationRecord
     validates :first_name, :last_name, presence: true
 end
 ```
 
-When I re-ran the spec in RSpec worked as expected.
+When I re-ran the spec it worked as expected.
 ```bash
 rspec spec/features/event-tracker/creating_person_spec.rb 
 .*.
@@ -239,7 +226,7 @@ Finished in 0.36839 seconds (files took 1.1 seconds to load)
 ```
 
 ### Committed the changes ###
-I confirmed that none of my tests failed before I committed the changes.
+Before I committed any changes I made sure that all existing tests passed.
 ```bash
 rspec spec/features/
 .*...
@@ -258,7 +245,7 @@ Finished in 0.4192 seconds (files took 1.01 seconds to load)
 ```bash
 git status
 git add -A
-git commit -m "Event tracker - Added data validation to person model"
+git commit -m "Event tracker - Added data validation to the person model"
 git checkout event-tracker
 git merge create-person 
 git push origin event-tracker

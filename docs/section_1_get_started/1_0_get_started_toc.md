@@ -2,7 +2,7 @@
 
 
 ## Get started ##
-> This section covers how I set up the *Cloud9* environment, installed the relevant components and creating the database before I created a new application.
+> This section covers how I set up the *Cloud9* environment, installed the relevant components and creating the database before I created a new Rails application.
 
 
 ### Section 1 - Get started - Table of contents ###
