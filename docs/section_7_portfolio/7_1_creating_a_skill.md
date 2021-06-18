@@ -23,3 +23,20 @@ the concole is a direct connection to the database
 ! = bang throws an error right away instead of failing silently
 
 
+git commit -m "Portfolio - Added skill model"
+rails g resource Portfolio title:string subtitle:string body:text main_image:text thumb_image:text
+
+
+resource generator is a skinny scaffold
+most common generator
+
+
+rails db:migrate
+== 20210618075410 CreatePortfolios: migrating =================================
+-- create_table(:portfolios)
+   -> 0.0356s
+== 20210618075410 CreatePortfolios: migrated (0.0357s) ========================
+
+
+
+
