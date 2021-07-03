@@ -12,7 +12,7 @@
     <h1 id="no-portfolio-items">No portfolio items have been created</h1>
 <% else %>
     <% @portfolio_items.each do |portfolio_item| %>
-     <p><%= link_to portfolio_item.title, portfolio_path(portfolio_item) %></p>
+     <p><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item) %></p>
      <p><%= portfolio_item.subtitle %></p>
      <p><%= portfolio_item.body %></p>
      <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
