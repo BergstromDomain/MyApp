@@ -1,3 +1,8 @@
+----------
+[<< Previous chapter](./1_1_set_up_development_environment.md) | [Table of contents](../how_i_developed_this_rails_application.md) | Next chapter >>
+----------
+
+
 # How I developed this Ruby on Rails application #
 
 

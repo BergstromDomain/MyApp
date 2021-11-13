@@ -1,3 +1,8 @@
+----------
+[<< Previous Chapter](../section_2_static_pages/2_0_static_pages_toc.md) | [Table Of Contents](../how_i_developed_this_rails_application.md) | Next Chapter >>
+----------
+
+
 # How I developed this Ruby on Rails application #
 
 
