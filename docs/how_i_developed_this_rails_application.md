@@ -1,21 +1,34 @@
+----------
+<< Previous chapter | Table of contents | [Next chapter >>](./section_1_get_started/1_0_get_started_toc.md)
+----------
+
+
 # How I developed this Ruby on Rails application #
-> I was first introduced to *Ruby on Rails* in 2008 when I worked at Tilgin. We developed a test automation framework based on Ruby on Rails combining Ruby-, Bash- and PHP-scripts and as well as test specifications and reports written in LaTeX. I realised that this was a very useful framework and that I would use this for my own apps at some point.
+> I was first introduced to *Ruby on Rails* in 2008 when I worked at Tilgin. At that time, we developed a test automation framework based on Ruby on Rails combining Ruby-, Bash- and PHP-scripts and as well as test specifications and reports written in LaTeX. I realised that this was a very useful framework and that I would use this for my own personal apps at some point.
 >
-> Since then, I have taken some online courses and I have had a few attempts of developing my own apps. None of them have been matured enough to be deployed.
+> Since then, I have taken some online courses and I have had a few attempts of developing my own apps. None of them have been matured enough to be deployed and published.
 >
 > In this blog series, I've documented the steps I took when I developed and deployed my first app. This blog series was written mostly for myself in order to learn how to develop Rails and to have a reference guide. I decided to document most of my development activities, including the version control handling.
 > 
-> I have created multiple appendix sections which I plan to populate with additional development details and deep dives as I go along.
+> As part of this development, I have also created several appendices sections which I will continue to to populate with additional development details and deep dives as I go along.
 
 
 ### Table of contents ###
 1. [Get started](./section_1_get_started/1_0_get_started_toc.md)
     1. [Set up environment](./section_1_get_started/1_1_set_up_development_environment.md)
-    2. [Created a new rails application](./section_1_get_started/1_2_created_a_new_rails_application.md)
+    2. [Created a new rails application](./section_1_get_started/1_2_create_a_new_rails_application.md)
 
 
 2. [Static pages](./section_2_static_pages/2_0_static_pages_toc.md)
     1. [Created static pages](./section_2_static_pages/2_1_created_static_pages.md)
+
+
+3. [Event tracker - Person](./section_3_event_tracker_person/3_0_event_tracker_person_toc.md)
+    1. [Creating a person](../section_3_event_tracker_person/3_1_creating_a_person.md)
+    2. [Listing people](../section_3_event_tracker_person/3_2_listing_people.md)
+    3. [Showing a person](../section_3_event_tracker_person/3_3_showing_a_person.md)
+    4. [Editing a person](../section_3_event_tracker_person/3_4_editing_a_person.md)
+    5. [Deleting a person](../section_3_event_tracker_person/3_5_deleting_a_person.md)
 
 
 101. [Appendix A - Ruby on rails](./appendix_a_ruby_on_rails/a_0_ruby_on_rails_tot.md)
