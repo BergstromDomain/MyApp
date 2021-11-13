@@ -1,3 +1,8 @@
+----------
+[<< Previous Chapter](../section_3_event_tracker_person/3_3_showed_a_person) | [Table Of Contents](../how_i_developed_this_rails_application.md) | [Next Chapter >>](../section_3_event_tracker_person/3_5_deleting_a_person.md)
+----------
+
+
 # How I developed this Ruby on Rails application #
 
 
@@ -240,4 +245,4 @@ Deleted branch editing-person (was 6530971).
 ```
 
 ----------
-[<< Previous Chapter](../section_3_event_tracker_person/3_3_showing_a_person) | [Table Of Contents](../how_i_developed_this_rails_application.md) | [Next Chapter >>](../section_3_event_tracker_person/3_5_deleting_a_person.md)
+[<< Previous Chapter](../section_3_event_tracker_person/3_3_showed_a_person) | [Table Of Contents](../how_i_developed_this_rails_application.md) | [Next Chapter >>](../section_3_event_tracker_person/3_5_deleting_a_person.md)

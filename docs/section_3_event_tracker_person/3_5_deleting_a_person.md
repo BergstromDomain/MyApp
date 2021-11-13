@@ -1,3 +1,8 @@
+----------
+[<< Previous Chapter](../section_3_event_tracker_person/3_4_editing_a_person.md) | [Table Of Contents](../how_i_developed_this_rails_application.md) | Next Chapter >>
+----------
+
+
 # How I developed this Ruby on Rails application #
 
 

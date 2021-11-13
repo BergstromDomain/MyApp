@@ -1,3 +1,8 @@
+----------
+[<< Previous Chapter](../section_3_event_tracker_person/3_0_event_tracker_person_toc.md) | [Table Of Contents](../how_i_developed_this_rails_application.md) | [Next Chapter >>](../section_3_event_tracker_person/3_2_listing_people.md)
+----------
+
+
 # How I developed this Ruby on Rails application #
 
 
@@ -252,7 +257,6 @@ git push origin event-tracker
 git branch -d create-person 
 Deleted branch create-person (was 2ae6008).
 ```
-
 
 
 ----------
